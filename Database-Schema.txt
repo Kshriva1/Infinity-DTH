@@ -1,0 +1,25 @@
+CREATE TABLE Package (
+	packageId number unique,
+	packageName varchar(30) not null,
+	packageCategory varchar (30) not null,
+	packageChargeType varchar(20) not null,
+	packageTransmissionType varchar(20) not null,
+	packageCost number not null,
+	packageFromDate date not null,
+	packageToDate date not null,
+	packageByDefault varchar(10) not null
+	
+);
+
+CREATE TABLE Channel (
+	channelId number unique,
+	channelName varchar(30) not null,
+	channelBand varchar(20) not null,
+	videoFrequency number not null,
+	audioFrequency number not  null,
+	channelChargeType varchar(20) not null,
+	channelTransmissionType varchar (20) not null,
+	channelCharge varchar (10)not null,
+	packageId references Package(packageId)
+	
+);
