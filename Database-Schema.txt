@@ -45,3 +45,13 @@ CREATE TABLE Channel (
 	packageId references Package(packageId)
 	
 );
+
+CREATE TABLE FEATURE (
+	featureId NUMBER PRIMARY KEY,
+	featureName VARCHAR(50)
+);
+
+CREATE TABLE SETTOPBOX_FEATURE (
+	setTopBoxId NUMBER REFERENCES SetTopBox (setTopBoxId),
+	featureId NUMBER REFERENCES FEATURE (featureId)
+);
