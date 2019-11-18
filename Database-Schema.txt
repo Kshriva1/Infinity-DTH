@@ -1,3 +1,25 @@
+create table SetTopBox (
+setTopBoxId number primary key,
+type varchar(20) not null,
+length number not null,
+breadth number not null,
+width number not null,
+price number not null,
+installationCharges number not null,
+updationCharges number not null,
+percentageDiscount number not null,
+billingType varchar(30) not null,
+refundAmount number not null);
+
+create table SetTopBoxInventory(
+setTopBoxId number primary key references SetTopBox(setTopBoxId),
+type varchar(20) not null,
+serialNumber number unique not null,
+macId varchar(20) unique not null,
+remoteAssetId number unique not null,
+dishAssetId number unique not null,
+setTopBoxStatus varchar(20) default 'Unassigned');
+
 CREATE TABLE Package (
 	packageId number unique,
 	packageName varchar(30) not null,
