@@ -13,7 +13,7 @@ public class Hello {
 			System.out.println("2. Register as a new user");
 			int input = s.nextInt();
 			if(input == 2) {
-				System.out.println("You have chosen to register as a new user");
+				System.out.println("You have chosen to register as a user");
 				System.out.println("Please enter the following details");
 				
 				System.out.println("Enter your first name: ");
